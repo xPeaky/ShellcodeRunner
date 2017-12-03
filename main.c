@@ -52,6 +52,7 @@ DWORD GetProcessID(char* name)
 		} while (Process32Next(snapshot, &entry));
 	}
 	CloseHandle(snapshot);
+	free(wcPName);
 
 	return pId;
 }
